@@ -54,7 +54,8 @@ async function createUser(info) {
         throw Error("User already exist");
     }
     try {
-        let hash = await bcrypt.hash(info.password, process.env.SALT);
+        let salt = await bcrypt.genSalt();
+        let hash = await bcrypt.hash(info.password, salt);
         const [rows, fields] = await sql.query("INSERT INTO users(UserName, Password, NickName) VALUES(?, ?, ?)", [info.userName, hash, info.nickName]);
     } catch (error) {
         throw Error("Error when adding user");
@@ -74,7 +75,8 @@ async function updateUser(info) {
             if (infoEntries[i][1] !== undefined) {
                 sqlQuery += ` ${infoEntries[i][0]}=?`;
                 if(infoEntries[i][0] == "password") {
-                    let hash = await bcrypt.hash(infoEntries[i][1], process.env.SALT);
+                    let salt = await bcrypt.genSalt();
+                    let hash = await bcrypt.hash(infoEntries[i][1], salt);
                     sqlValues = [...sqlValues, hash];
                 } else {
                     sqlValues = [...sqlValues, infoEntries[i][1]];
