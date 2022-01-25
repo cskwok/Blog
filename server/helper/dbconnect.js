@@ -13,4 +13,4 @@ const sqlOptions = {
     queueLimit: process.env.SQL_QUEUE_LIMIT    
 }
 
-export default await mysql.createPool(sqlOptions);
+export default mysql.createPool(sqlOptions);
