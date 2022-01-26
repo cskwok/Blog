@@ -43,7 +43,7 @@ async function getPostsByUserID(req, res) {
 async function createPost(req, res) {
     const info = req.body;
     try {
-        const post = await Posts.createPost({userid: info.userid, title: info.title, content: info.content});  
+        const post = await Posts.createPost({userid: info.userid, title: info.title, content: info.content, previewContent: info.previewContent});  
         Response(res, 200, null, "Add post sucessfully");        
     } catch (error) {
         Response(res, 400, null, error.message);       

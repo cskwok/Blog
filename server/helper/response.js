@@ -1,6 +1,5 @@
 export default (res, status, data=null, msg="", args) => {
-    let response = {
-        status: status,
+    let response = {        
         data: data,
         msg: msg
     }    
