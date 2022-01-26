@@ -14,4 +14,5 @@ This project would be a blog application with a simple cms.
 - frontend blog pages
 - a simple cms for updating blog
 
+## A temporary design
 ![alt text](https://github.com/cskwok/Blog/blob/master/blog.png?raw=true)
