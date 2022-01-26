@@ -11,7 +11,7 @@ function Post({ data, dispatch }) {
         <div className="post card">
             <p className="title">{data.Title}</p>
             <p className="info">Created by {data.Author} at {data.CreateTime}</p>
-            <p className="content">{isShort ? data.PreviewContent : data.Content}</p>
+            <p className="content">{isShort ? (data.PreviewContent + " ...") : data.Content}</p>
             {isShort ? <p className="continue" onClick={continueHandler}>(Continue reading)</p> : ""}
         </div>
     );

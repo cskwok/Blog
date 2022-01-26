@@ -13,3 +13,5 @@ This project would be a blog application with a simple cms.
 - simple jwt auth
 - frontend blog pages
 - a simple cms for updating blog
+
+![alt text](https://github.com/cskwok/Blog/blob/master/blog.png?raw=true)
