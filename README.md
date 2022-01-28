@@ -6,13 +6,17 @@ This project is under development
 This project would be a blog application with a simple cms.
 - Frontend: React
 - Backend: Node.js + express.js
+- Authentication: jwt + cookies
 - Database: Mysql
 
 ## Todo
-- RESTful api
-- simple jwt auth
-- frontend blog pages
+- RESTful api (partially)
+- ~~simple jwt auth~~
+- frontend blog pages (partially)
 - a simple cms for updating blog
+-filter function
 
-## A temporary design
-![alt text](https://github.com/cskwok/Blog/blob/master/blog.png?raw=true)
+## Screenshot
+![alt text](https://github.com/cskwok/Blog/blob/master/readme-assets/blog.png?raw=true)
+![alt text](https://github.com/cskwok/Blog/blob/master/readme-assets/login.png?raw=true)
+![alt text](https://github.com/cskwok/Blog/blob/master/readme-assets/after-login?raw=true)
