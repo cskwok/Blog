@@ -14,7 +14,7 @@ This project would be a blog application with a simple cms.
 - ~~simple jwt auth~~
 - frontend blog pages (partially)
 - a simple cms for updating blog
--filter function
+- filter function
 
 ## Screenshot
 ![alt text](https://github.com/cskwok/Blog/blob/master/readme-assets/blog.png?raw=true)
