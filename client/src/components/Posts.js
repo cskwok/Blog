@@ -2,6 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 import axios from "axios";
 
 import Post from "./Post.js";
+import config from "../config/config.js";
 
 const posts = [];
 
@@ -30,9 +31,9 @@ function Posts() {
   useEffect(() => {
     setLoading(true);
     async function getData() {
-      const res = await axios.get("http://localhost:5000/api/posts");
+      const res = await axios.get(config.api("/posts"));
       if (res.status === 200 && res.data.data) {
-        console.log(res.data.data);
+        //console.log(res.data.data);
         dispatch({ type: postsAction.ADD, payload: res.data.data });
       }
       setLoading(false);

@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-:root {
+ :root {
   --clr-main: #073B4C;
   --clr-main-light: #0c556d;
-  --clr-main-dark: #06303d;
+  --clr-main-dark: #073442;
+  --clr-main-darker: #06303d;
   --clr-white: #e2e2e2;
-}
+} 
 
 *, *::before, *::after {
   padding: 0;
@@ -28,12 +29,23 @@
   font-family: 'Raleway', sans-serif;
 }
 
+.highlight-bg {
+  background-color: var(--clr-sub);
+}
+
 .sidebar {
   width: 30%;
   height: 100%;
+  min-height: 400px;
   background-color: var(--clr-main);
   color: var(--clr-white); 
   position: relative;
+  user-select: none;  
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--clr-white);
 }
 
 .sidebar .logo {
@@ -49,39 +61,50 @@
   text-align: center;
 }
 
-.sidemenu li {
-  font-size: 1.5rem; 
-  padding: 1rem;
-}
-
-.sidemenu li.selected {
-  background-color: var(--clr-main-dark);
-}
-
-.sidebar .login-btn {
-  position: absolute;
-  text-align: center;
+.sidebar .menu-item {
   cursor: pointer;
   width: 100%;
-  font-size: 1.2rem; 
+  font-size: 1.5rem; 
   padding: 1rem;
-  bottom: 0;
-  transition: background-color 150ms linear;
+  transition: background-color 100ms linear; 
 }
-.sidebar .login-btn:hover, .login-btn:focus {
+
+.sidebar .menu-item.selected {
   background-color: var(--clr-main-dark);
+}
+
+.menu-item:hover, .menu-item:focus {
+  background-color: var(--clr-main-dark);
+}
+
+.sidebar .sideBottom {
+  position: absolute;
+  width: 100%;
+  bottom: 0; 
+  text-align: center;  
+  font-size: 1.2rem;
+}
+.sidebar .sideBottom .info {
+  margin: 0.5rem;
 }
 
 main {
   width: 70%;
   height: 100%; 
   background-color: var(--clr-white);
-  overflow-y: scroll;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
   padding: 2rem;
   box-shadow: -1px 2px 8px 1px rgba(0,0,0, 0.1);
+}
+
+.posts {
+  height: 100%;
 }
 
 .post {
@@ -106,4 +129,45 @@ main {
 .post .continue {
   text-decoration: underline;
   cursor: pointer;
+}
+.login {  
+  text-align: center;
+  width: 60%;
+}
+
+.login h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;  
+}
+
+.login form > label {
+  margin: .8rem;  
+}
+
+.login form > input[type="text"],input[type="password"] {
+  height: 2rem;
+  text-align: center;
+}
+
+.login form > input[type="submit"] {
+  margin-top: 1.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  color: var(--clr-white);
+  background-color: var(--clr-main-light);
+  transition: background-color 100ms linear;
+}
+
+.btn:hover { 
+  background-color: var(--clr-main-dark);
 }

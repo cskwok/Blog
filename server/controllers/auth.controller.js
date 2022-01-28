@@ -10,8 +10,8 @@ async function login(req, res) {
         if(user != null) {
             let checkPwd = await bcrypt.compare(info.password, user.Password);
             if(checkPwd) {
-                res.cookie("t", Auth.signToken(Users.resUsers(user)), {httpOnly: true, maxAge: 3600000, SameSite: 'Strict'});
-                Response(res, 200, {userid: user.Userid, nickName: user.NickName}, "Login successfully");
+                res.cookie("t", Auth.signToken(Users.resUsers(user)), {httpOnly: true, maxAge: 3600000, sameSite: "Strict"});
+                Response(res, 200, Users.resUsers(user), "Login successfully");
             } else {
                 Response(res, 200, null, "Some inputs are incorrect");
             }                      
