@@ -7,10 +7,11 @@ import { GlobalContext } from "./contexts/GlobalContext.js";
 
 
 function App() {
-  const { login, setLogin, authToken, setNickName, setUserid } = useContext(GlobalContext);
+  const { login, setLogin, authToken, setNickName, setUserid, processing, setProcessing } = useContext(GlobalContext);
 
   useEffect(() => {
     async function auth() {
+      setProcessing(true);
       let checkLogin = await authToken();
       console.log(checkLogin);
       if(checkLogin) {
@@ -19,6 +20,7 @@ function App() {
         setNickName(user.nickName);
         setUserid(user.userid);
       }
+      setProcessing(false);
     }
     auth();
 }, [login])

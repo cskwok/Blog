@@ -13,10 +13,10 @@ async function login(req, res) {
                 res.cookie("t", Auth.signToken(Users.resUsers(user)), {httpOnly: true, maxAge: 3600000, sameSite: "Strict"});
                 Response(res, 200, Users.resUsers(user), "Login successfully");
             } else {
-                Response(res, 200, null, "Some inputs are incorrect");
+                Response(res, 401, null, "Some inputs are incorrect");
             }                      
         } else {
-            Response(res, 200, null, "Some inputs are incorrect");            
+            Response(res, 401, null, "Some inputs are incorrect");            
         }
     } catch (error) {
         Response(res, 400, null, error.message);
