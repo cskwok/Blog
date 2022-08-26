@@ -24,5 +24,6 @@ app.use("/api", cors(corsOptions), globalRouter);
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}.`);
+    console.log('test');
     console.log('test2');
 });
